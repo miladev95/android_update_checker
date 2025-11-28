@@ -15,7 +15,7 @@ This repository contains a demonstration app plus the update-checker implementat
 
 ## Project layout
 
-- `app/src/main/java/ir/zodiacgroup/updatechecker/` – main library code and demo activity
+- `app/src/main/java/ca.miladev95/updatechecker/` – main library code and demo activity
   - `UpdateChecker.kt` – main API
   - `models/VersionInfo.kt` – data model
   - `network/UpdateClient.kt` – HTTP + JSON parsing
@@ -88,7 +88,7 @@ Sample JSON files used by tests are located at `app/src/test/resources/`:
 
 ## Files to review
 
-- `app/src/main/java/ir/zodiacgroup/updatechecker/UpdateChecker.kt`
-- `app/src/main/java/ir/zodiacgroup/updatechecker/network/UpdateClient.kt`
-- `app/src/main/java/ir/zodiacgroup/updatechecker/ui/UpdateDialog.kt`
-- `app/src/main/java/ir/zodiacgroup/updatechecker/models/VersionInfo.kt`
+- `app/src/main/java/ca.miladev95/updatechecker/UpdateChecker.kt`
+- `app/src/main/java/ca.miladev95/updatechecker/network/UpdateClient.kt`
+- `app/src/main/java/ca.miladev95/updatechecker/ui/UpdateDialog.kt`
+- `app/src/main/java/ca.miladev95/updatechecker/models/VersionInfo.kt`
