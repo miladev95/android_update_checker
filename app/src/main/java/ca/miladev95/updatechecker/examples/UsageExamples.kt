@@ -1,10 +1,10 @@
-package ir.zodiacgroup.updatechecker.examples
+package ca.miladev95.updatechecker.examples
 
 import android.app.Activity
 import android.widget.Toast
-import ir.zodiacgroup.updatechecker.UpdateChecker
-import ir.zodiacgroup.updatechecker.models.VersionInfo
-import ir.zodiacgroup.updatechecker.ui.UpdateDialog
+import ca.miladev95.updatechecker.UpdateChecker
+import ca.miladev95.updatechecker.models.VersionInfo
+import ca.miladev95.updatechecker.ui.UpdateDialog
 
 /**
  * Examples of how to use the UpdateChecker library

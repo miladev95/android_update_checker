@@ -1,6 +1,6 @@
-package ir.zodiacgroup.updatechecker.network
+package ca.miladev95.updatechecker.network
 
-import ir.zodiacgroup.updatechecker.models.VersionInfo
+import ca.miladev95.updatechecker.models.VersionInfo
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import org.junit.Assert.*

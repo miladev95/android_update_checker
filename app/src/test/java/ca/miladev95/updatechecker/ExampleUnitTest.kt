@@ -1,4 +1,4 @@
-package ir.zodiacgroup.updatechecker
+package ca.miladev95.updatechecker
 
 import org.junit.Test
 

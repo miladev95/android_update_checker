@@ -1,11 +1,11 @@
-package ir.zodiacgroup.updatechecker
+package ca.miladev95.updatechecker
 
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
-import ir.zodiacgroup.updatechecker.models.VersionInfo
-import ir.zodiacgroup.updatechecker.network.UpdateClient
-import ir.zodiacgroup.updatechecker.ui.UpdateDialog
+import ca.miladev95.updatechecker.models.VersionInfo
+import ca.miladev95.updatechecker.network.UpdateClient
+import ca.miladev95.updatechecker.ui.UpdateDialog
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

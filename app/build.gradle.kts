@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "ir.zodiacgroup.updatechecker"
+    namespace = "ca.miladev95.updatechecker"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "ir.zodiacgroup.updatechecker"
+        applicationId = "ca.miladed95.updatechecker"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

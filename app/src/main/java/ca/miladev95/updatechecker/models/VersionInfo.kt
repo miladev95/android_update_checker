@@ -1,4 +1,4 @@
-package ir.zodiacgroup.updatechecker.models
+package ca.miladev95.updatechecker.models
 
 /**
  * Data class representing version information from the server

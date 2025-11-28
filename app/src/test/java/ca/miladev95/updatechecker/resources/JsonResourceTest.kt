@@ -1,6 +1,6 @@
-package ir.zodiacgroup.updatechecker.resources
+package ca.miladev95.updatechecker.resources
 
-import ir.zodiacgroup.updatechecker.models.VersionInfo
+import ca.miladev95.updatechecker.models.VersionInfo
 import kotlinx.coroutines.test.runTest
 import org.json.JSONObject
 import org.junit.Assert.*

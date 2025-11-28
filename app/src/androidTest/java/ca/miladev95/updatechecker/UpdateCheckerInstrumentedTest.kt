@@ -1,9 +1,9 @@
-package ir.zodiacgroup.updatechecker
+package ca.miladev95.updatechecker
 
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import ir.zodiacgroup.updatechecker.models.VersionInfo
+import ca.miladev95.updatechecker.models.VersionInfo
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.*
 import org.junit.Before
@@ -157,7 +157,7 @@ class UpdateCheckerInstrumentedTest {
     fun testContextIsValid() {
         assertNotNull(context)
         assertNotNull(context.packageName)
-        assertEquals("ir.zodiacgroup.updatechecker", context.packageName)
+        assertEquals("ca.miladev95.updatechecker", context.packageName)
     }
 }
 

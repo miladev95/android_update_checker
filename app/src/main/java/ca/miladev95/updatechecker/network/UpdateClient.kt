@@ -1,6 +1,6 @@
-package ir.zodiacgroup.updatechecker.network
+package ca.miladev95.updatechecker.network
 
-import ir.zodiacgroup.updatechecker.models.VersionInfo
+import ca.miladev95.updatechecker.models.VersionInfo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONObject

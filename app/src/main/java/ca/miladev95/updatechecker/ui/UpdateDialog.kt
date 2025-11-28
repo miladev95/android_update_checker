@@ -1,10 +1,10 @@
-package ir.zodiacgroup.updatechecker.ui
+package ca.miladev95.updatechecker.ui
 
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import ir.zodiacgroup.updatechecker.models.VersionInfo
+import ca.miladev95.updatechecker.models.VersionInfo
 
 /**
  * Dialog for displaying update information to the user

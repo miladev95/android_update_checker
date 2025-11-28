@@ -1,10 +1,10 @@
-package ir.zodiacgroup.updatechecker.integration
+package ca.miladev95.updatechecker.integration
 
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import ir.zodiacgroup.updatechecker.UpdateChecker
-import ir.zodiacgroup.updatechecker.models.VersionInfo
+import ca.miladev95.updatechecker.UpdateChecker
+import ca.miladev95.updatechecker.models.VersionInfo
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.*
 import org.junit.Before

@@ -1,4 +1,4 @@
-package ir.zodiacgroup.updatechecker.models
+package ca.miladev95.updatechecker.models
 
 import org.junit.Test
 import org.junit.Assert.*
