@@ -1,0 +1,31 @@
+name: Trigger JitPack Build
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  trigger-jitpack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify start
+        run: echo "Triggering JitPack build for tag ${{ github.ref_name }}"
+
+      - name: Trigger JitPack build and fetch log
+        run: |
+          TAG=${{ github.ref_name }}
+          REPO="miladev95/android_update_checker"
+          URL="https://jitpack.io/com/github/${REPO}/${TAG}/build.log"
+          echo "Requesting: $URL"
+          # Request the JitPack build log which also triggers a build if necessary
+          curl -v --fail --show-error "$URL" -o jitpack_build.log || true
+          echo "--- JitPack build log ---"
+          sed -n '1,400p' jitpack_build.log || true
+
+      - name: Upload JitPack log
+        uses: actions/upload-artifact@v4
+        with:
+          name: jitpack-log-${{ github.ref_name }}
+          path: jitpack_build.log
+
