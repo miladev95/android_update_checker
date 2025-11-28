@@ -62,7 +62,7 @@ repositories {
 }
 
 dependencies {
-  implementation("com.github.miladev95:update_checker:v1.0.0")
+  implementation("com.github.miladev95:android_update_checker:v1.0.0")
 }
 ```
 
@@ -73,7 +73,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'com.github.miladev95:update_checker:v1.0.0'
+  implementation 'com.github.miladev95:android_update_checker:v1.0.0'
 }
 ```
 
