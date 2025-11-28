@@ -2,8 +2,6 @@
 
 A lightweight Android library that checks a remote JSON endpoint for the latest app version and shows an update dialog when a newer version is available.
 
-This repository contains a demonstration app plus the update-checker implementation and a comprehensive test suite.
-
 ## Features
 
 - Fetch version info from a JSON URL
@@ -23,7 +21,6 @@ This repository contains a demonstration app plus the update-checker implementat
 - `app/src/test/resources/` – sample JSON files used by unit tests
 - `app/src/test/` – unit tests
 - `app/src/androidTest/` – instrumented / integration tests
-- `QUICKSTART.md`, `USAGE.md`, `API.md`, `INTEGRATION.md` – documentation files
 
 ## Quick start
 
@@ -58,8 +55,6 @@ UpdateChecker(this)
 
 4. Using the library via JitPack
 
-If you publish tags on GitHub and want users to add your library via JitPack, add the JitPack repository in the consumer project and depend on the tag:
-
 Kotlin DSL (consumer):
 ```kotlin
 repositories {
@@ -82,8 +77,6 @@ dependencies {
 }
 ```
 
-Tagging: create a git tag (for example `v1.0.0`) and push it to GitHub. JitPack will build that tag into a Maven artifact which consumers can use as above.
-
 ## Running tests
 
 Unit tests:
@@ -98,8 +91,6 @@ Instrumented tests (require connected device/emulator):
 ./gradlew connectedAndroidTest
 ```
 
-There is a test runner script at `run_tests.sh` that runs unit tests and describes how to run instrumented tests.
-
 ## Test resources
 
 Sample JSON files used by tests are located at `app/src/test/resources/`:
@@ -111,7 +102,6 @@ Sample JSON files used by tests are located at `app/src/test/resources/`:
 ## Notes & tips
 
 - Minimum supported SDK in the demo is 24.
-- The library automatically adds `INTERNET` permission in the demo app's manifest.
 - For production, host your JSON via HTTPS and keep the `versionCode` as an integer you increment on release.
 
 ## Files to review
