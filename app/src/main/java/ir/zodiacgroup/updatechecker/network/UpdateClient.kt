@@ -58,8 +58,8 @@ class UpdateClient {
         return VersionInfo(
             versionCode = json.getInt("versionCode"),
             versionName = json.getString("versionName"),
-            updateUrl = json.optString("updateUrl", null),
-            releaseNotes = json.optString("releaseNotes", null),
+            updateUrl = if (json.has("updateUrl")) json.getString("updateUrl") else null,
+            releaseNotes = if (json.has("releaseNotes")) json.getString("releaseNotes") else null,
             forceUpdate = json.optBoolean("forceUpdate", false)
         )
     }
