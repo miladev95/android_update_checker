@@ -1,4 +1,6 @@
-# Update Checker
+[![](https://jitpack.io/v/miladev95/android_update_checker.svg)](https://jitpack.io/#miladev95/android_update_checker)
+
+# Android Update Checker
 
 A lightweight Android library that checks a remote JSON endpoint for the latest app version and shows an update dialog when a newer version is available.
 
@@ -76,6 +78,24 @@ dependencies {
   implementation 'com.github.miladev95:android_update_checker:v1.0.0'
 }
 ```
+
+Groovy DSL:
+```groovy
+repositories {
+  maven {
+    url = uri('https://maven.pkg.github.com/miladev95/android_update_checker')
+    credentials {
+      username = project.findProperty('gpr.user') ?: System.getenv('GITHUB_ACTOR')
+      password = project.findProperty('gpr.key') ?: System.getenv('GITHUB_TOKEN')
+    }
+  }
+}
+
+dependencies {
+  implementation 'ca.miladev95:android_update_checker:1.0.0'
+}
+```
+
 
 ## Running tests
 
