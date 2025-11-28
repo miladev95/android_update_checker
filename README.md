@@ -56,6 +56,34 @@ UpdateChecker(this)
     .check("https://your-server.com/version.json")
 ```
 
+4. Using the library via JitPack
+
+If you publish tags on GitHub and want users to add your library via JitPack, add the JitPack repository in the consumer project and depend on the tag:
+
+Kotlin DSL (consumer):
+```kotlin
+repositories {
+  maven { url = uri("https://jitpack.io") }
+}
+
+dependencies {
+  implementation("com.github.miladev95:update_checker:v1.0.0")
+}
+```
+
+Groovy DSL (consumer):
+```groovy
+repositories {
+  maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+  implementation 'com.github.miladev95:update_checker:v1.0.0'
+}
+```
+
+Tagging: create a git tag (for example `v1.0.0`) and push it to GitHub. JitPack will build that tag into a Maven artifact which consumers can use as above.
+
 ## Running tests
 
 Unit tests:

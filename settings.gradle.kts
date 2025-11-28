@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Update Checker"
 include(":app")
- 

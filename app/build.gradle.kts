@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.android.application)
+    id("com.android.library")
     alias(libs.plugins.kotlin.android)
 }
 
@@ -8,7 +8,6 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "ca.miladev95.updatechecker"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
