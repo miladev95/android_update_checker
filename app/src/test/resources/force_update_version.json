@@ -1,0 +1,8 @@
+{
+  "versionCode": 3,
+  "versionName": "1.0.2",
+  "updateUrl": "https://example.com/app-v1.0.2.apk",
+  "releaseNotes": "New features and bug fixes",
+  "forceUpdate": true
+}
+
