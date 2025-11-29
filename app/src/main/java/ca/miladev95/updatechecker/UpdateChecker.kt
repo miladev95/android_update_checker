@@ -9,7 +9,6 @@ import ca.miladev95.updatechecker.ui.UpdateDialog
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 /**
  * Main class for checking application updates
@@ -42,7 +41,7 @@ class UpdateChecker(private val context: Context) {
                 @Suppress("DEPRECATION")
                 packageInfo.versionCode
             }
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             0
         }
     }
@@ -116,5 +115,43 @@ class UpdateChecker(private val context: Context) {
             }
         }
     }
-}
 
+    // New overload: allow passing callbacks directly when calling check()
+    /**
+     * Checks for updates and invokes the provided callbacks. Returns this for chaining.
+     * onUpdate will be invoked with the VersionInfo when an update is available.
+     */
+    fun check(
+        url: String,
+        onUpdate: (VersionInfo) -> Unit,
+        onNoUpdate: (() -> Unit)? = null,
+        onError: ((Exception) -> Unit)? = null
+    ): UpdateChecker {
+        // wire provided callbacks to this instance then start check
+        this.onUpdateAvailable = onUpdate
+        if (onNoUpdate != null) this.onNoUpdateAvailable = onNoUpdate
+        if (onError != null) this.onError = onError
+
+        check(url)
+        return this
+    }
+
+    /**
+     * Checks for updates, optionally shows dialog and invokes the provided callbacks.
+     * onUpdate will be invoked with the VersionInfo when an update is available.
+     */
+    fun checkAndShowDialog(
+        url: String,
+        showDialogOnUpdate: Boolean = true,
+        onUpdate: (VersionInfo) -> Unit,
+        onNoUpdate: (() -> Unit)? = null,
+        onError: ((Exception) -> Unit)? = null
+    ): UpdateChecker {
+        this.onUpdateAvailable = onUpdate
+        if (onNoUpdate != null) this.onNoUpdateAvailable = onNoUpdate
+        if (onError != null) this.onError = onError
+
+        checkAndShowDialog(url, showDialogOnUpdate)
+        return this
+    }
+}

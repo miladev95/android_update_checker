@@ -24,9 +24,10 @@ A lightweight Android library that checks a remote JSON endpoint for the latest 
 - `app/src/test/` – unit tests
 - `app/src/androidTest/` – instrumented / integration tests
 
-## Quick start
 
-1. Host a JSON file (example `version.json`) on a web server or CDN with this structure:
+## Usage (concise)
+
+Host a JSON file (example `version.json`) on a web server or CDN with this structure:
 
 ```json
 {
@@ -38,21 +39,28 @@ A lightweight Android library that checks a remote JSON endpoint for the latest 
 }
 ```
 
-2. In your Activity (or on app start), call:
+If you prefer a compact call that receives the full `VersionInfo` when an update is available, use the convenience overloads:
 
 ```kotlin
-UpdateChecker(this)
-    .checkAndShowDialog("https://your-server.com/version.json")
+// show dialog automatically and get VersionInfo in the callback
+UpdateChecker(this).checkAndShowDialog(
+    url = "https://your-server.com/version.json",
+    showDialogOnUpdate = true,
+    onUpdate = { versionInfo ->
+        // versionInfo.versionCode, versionInfo.updateUrl, versionInfo.releaseNotes, etc.
+    },
+    onNoUpdate = { /* no update */ },
+    onError = { ex -> /* handle error */ }
+)
 ```
-
-3. Optionally add callbacks:
-
+or call without auto-dialog and handle the update yourself
 ```kotlin
-UpdateChecker(this)
-    .setOnUpdateAvailable { info -> /* handle */ }
-    .setOnNoUpdateAvailable { /* handle */ }
-    .setOnError { error -> /* handle */ }
-    .check("https://your-server.com/version.json")
+UpdateChecker(this).check(
+    url = "https://your-server.com/version.json",
+    onUpdate = { versionInfo -> /* handle update */ },
+    onNoUpdate = { /* no update */ },
+    onError = { ex -> /* handle error */ }
+)
 ```
 
 4. Using the library via JitPack
@@ -78,24 +86,6 @@ dependencies {
   implementation 'com.github.miladev95:android_update_checker:v1.0.0'
 }
 ```
-
-Groovy DSL:
-```groovy
-repositories {
-  maven {
-    url = uri('https://maven.pkg.github.com/miladev95/android_update_checker')
-    credentials {
-      username = project.findProperty('gpr.user') ?: System.getenv('GITHUB_ACTOR')
-      password = project.findProperty('gpr.key') ?: System.getenv('GITHUB_TOKEN')
-    }
-  }
-}
-
-dependencies {
-  implementation 'ca.miladev95:android_update_checker:1.0.0'
-}
-```
-
 
 ## Running tests
 
