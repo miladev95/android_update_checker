@@ -59,6 +59,17 @@ UpdateChecker(this).setOnUpdateAvailable { versionInfo ->
 }.check(url = "https://your-server.com/version.json")
 ```
 
+## Required Android permissions
+
+This library performs network requests to fetch version information, so your app's AndroidManifest must include the following permissions (add them as direct children of the root `<manifest>` element in your app module):
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+
+These are normal permissions (no runtime prompt required).
+
 4. Using the library via JitPack
 
 Kotlin DSL (consumer):
