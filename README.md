@@ -70,7 +70,7 @@ This library performs network requests to fetch version information, so your app
 
 These are normal permissions (no runtime prompt required).
 
-4. Using the library via JitPack
+## Using the library via JitPack
 
 Kotlin DSL (consumer):
 ```kotlin
