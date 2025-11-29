@@ -46,21 +46,17 @@ If you prefer a compact call that receives the full `VersionInfo` when an update
 UpdateChecker(this).checkAndShowDialog(
     url = "https://your-server.com/version.json",
     showDialogOnUpdate = true,
-    onUpdate = { versionInfo ->
-        // versionInfo.versionCode, versionInfo.updateUrl, versionInfo.releaseNotes, etc.
-    },
-    onNoUpdate = { /* no update */ },
-    onError = { ex -> /* handle error */ }
 )
 ```
 or call without auto-dialog and handle the update yourself
 ```kotlin
-UpdateChecker(this).check(
-    url = "https://your-server.com/version.json",
-    onUpdate = { versionInfo -> /* handle update */ },
-    onNoUpdate = { /* no update */ },
-    onError = { ex -> /* handle error */ }
-)
+UpdateChecker(this).setOnUpdateAvailable { versionInfo ->
+  CustomToast.showSuccess(this, versionInfo.updateUrl.toString())
+}.setOnNoUpdateAvailable {
+  CustomToast.showInfo(this, "No update available")
+}.setOnError { error ->
+  CustomToast.showInfo(this, error.toString())
+}.check(url = "https://your-server.com/version.json")
 ```
 
 4. Using the library via JitPack
